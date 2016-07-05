@@ -37,7 +37,7 @@ public class CarInventoryExample {
 	}
 	
 	@ExampleFor( values={"Lambda"} )
-	public Collection<Car> filterCars( Collection<Car> cars ){
+	public Collection<Car> filterBlueCars( Collection<Car> cars ){
 		return filterCars( cars, car -> "blue".equals(car.getColor()));
 	}
 	
