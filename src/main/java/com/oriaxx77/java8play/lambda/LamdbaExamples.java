@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.oriaxx77.java8play.ExampleFor;
+import com.oriaxx77.java8play.util.model.Car;
 
 /**
  * Example for lambdas.
@@ -13,13 +14,9 @@ import com.oriaxx77.java8play.ExampleFor;
  * 	- behavioural parameterization which is CONCISE and FLEXIBLE
  */
 @ExampleFor( values={"java.lang.FunctionalInterface","Lambda","Method Reference"})
-public class CarInventoryExample {
+public class LamdbaExamples {
 
-	private static class Car{
-		private String color;
-		String getColor(){ return color;}
-		boolean isRed(){ return "red".equals( this.color ); }
-	}
+	
 
 	@FunctionalInterface
 	private static interface CarFilterPredicate {
