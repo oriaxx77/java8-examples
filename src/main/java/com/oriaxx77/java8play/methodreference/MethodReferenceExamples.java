@@ -16,7 +16,7 @@ public class MethodReferenceExamples {
 							    (car1, car2)-> car1.getPrice().compareTo(car2.getPrice()));
 	}
 	
-	public Car getTheBetterCar( Car car1, Car car2, Comparator<Car> comparator) {
+	Car getTheBetterCar( Car car1, Car car2, Comparator<Car> comparator) {
 		return comparator.compare(car1, car2) >= 0 ? car1 : car2 ;
 	}
 	

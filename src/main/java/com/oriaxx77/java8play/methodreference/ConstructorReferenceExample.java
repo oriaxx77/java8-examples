@@ -8,7 +8,7 @@ import com.oriaxx77.java8play.ExampleFor;
 import com.oriaxx77.java8play.util.model.Car;
 
 @ExampleFor("Method Reference")
-public class MethodReferenceExamples2 {
+public class ConstructorReferenceExample {
 	
 	<T, SRC extends Collection<T>, DEST extends Collection<T>> 
 		DEST copyElements( SRC source, Supplier<DEST> destinationFactory) 
