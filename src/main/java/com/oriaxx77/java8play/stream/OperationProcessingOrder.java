@@ -7,7 +7,7 @@ import java.util.Arrays;
  * Each and every elements go through the pipeline independently.
  * Run the example then check the console. 
  */
-public class OperationProcesingOrder {
+public class OperationProcessingOrder {
 	public static void main(String[] args) {
 		Arrays.stream( new int[]{1,2,3,4,5} )
 			  .map( i -> {
