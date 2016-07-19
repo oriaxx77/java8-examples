@@ -10,6 +10,8 @@ See the [CompletableFuturesExamples.java](./src/main/java/com/oriaxx77/java8play
 
 2. Streams
 -------------------------
+See the [com.oriaxx77.java8play.stream](./src/main/java/com/oriaxx77/java8play/stream/). package
+
 Hello World with streams [HelloWorld.java](./src/main/java/com/oriaxx77/java8play/stream/HelloWorld.java).
 
 Stream creation [StreamCreation.java](./src/main/java/com/oriaxx77/java8play/stream/StreamCreation.java).
@@ -23,9 +25,9 @@ Flat-map [FlatMap.java](./src/main/java/com/oriaxx77/java8play/stream/FlatMap.ja
 Parallel streams [PrimeCountWithParallelStream.java](./src/main/java/com/oriaxx77/java8play/stream/PrimeCountWithParallelStream.java).
 
 
-3. Lamdba Expressions
+3. Lambda Expressions
 ---------------------------
-See the [com.oriaxx77.java8play.lamdba](./src/main/java/com/oriaxx77/java8play/lamdba) package.
+See the [com.oriaxx77.java8play.lamdba](./src/main/java/com/oriaxx77/java8play/lambda) package.
 
 
 4. Default methods
