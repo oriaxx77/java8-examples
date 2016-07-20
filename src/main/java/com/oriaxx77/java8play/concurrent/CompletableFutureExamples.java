@@ -9,7 +9,7 @@ import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import com.oriaxx77.java8play.ExampleFor;
+import com.oriaxx77.java8play.Example;
 import com.oriaxx77.java8play.concurrent.util.CurrentThread;
 import com.oriaxx77.java8play.concurrent.util.Customer;
 import com.oriaxx77.java8play.concurrent.util.Route;
@@ -33,7 +33,7 @@ import com.oriaxx77.java8play.concurrent.util.Shop;
  * - acceptAsync( Executor ), applyAsync( Executor ), runAsync( Executor ) -> These run in a new thread using the provided executor. 
  * 
  */
-@ExampleFor( "java.util.concurrent.CompletableFuture")
+@Example( "java.util.concurrent.CompletableFuture")
 public class CompletableFutureExamples {
 	
 	
@@ -54,12 +54,10 @@ public class CompletableFutureExamples {
 	 * @throws InterruptedException
 	 * @throws ExecutionException
 	 */
-	@ExampleFor( values={ "CompletableFuture#thenApply()",
+	@Example( values={ "CompletableFuture#thenApply()",
 						  "CompletableFuture#thenApplyAsync()",
 						  "CompletableFuture#thenAccept()",
-						  "CompletableFuture#thenAcceptAsync()",
-						  "CompletableFuture#thenRun",
-						  "CompletableFuture#thenRunAsync()"} )
+						  "CompletableFuture#thenAcceptAsync()"} )
 	public void pipes() throws InterruptedException, ExecutionException {
 		
 		CompletableFuture.supplyAsync( () -> "Jon" )
@@ -86,7 +84,7 @@ public class CompletableFutureExamples {
 	 * 
 	 * @throws InterruptedException 
 	 */
-	@ExampleFor(values={"CompletableFuture.complete()",
+	@Example(values={"CompletableFuture.complete()",
 						"CompletableFuture.get())"})
 	public void waitForFutureMessage() throws InterruptedException
 	{
@@ -118,8 +116,8 @@ public class CompletableFutureExamples {
 		futureMessage.complete( "Hi There" );	
 	}
 	
-	@ExampleFor("CompletableFuture.thenAccept()")
-	private void waitForAllTasksToComplete() throws InterruptedException, ExecutionException {
+	@Example("CompletableFuture.thenAccept()")
+	public void waitForAllTasksToComplete() throws InterruptedException, ExecutionException {
 		// 1. Create some CompletableFuture that completes randomly at some future time and returns with a message.
 		List<CompletableFuture<Void>> futureResults = IntStream.range(0, 7)
 												 .mapToObj( i -> CompletableFuture.runAsync( CurrentThread::printHello ) )
@@ -131,8 +129,8 @@ public class CompletableFutureExamples {
 		
 	}
 	
-	@ExampleFor("CompletableFuture#anyOf()")
-	private void waitForOneOfTheTasksToComplete() throws InterruptedException, ExecutionException {
+	@Example("CompletableFuture#anyOf()")
+	public void waitForOneOfTheTasksToComplete() throws InterruptedException, ExecutionException {
 		List<CompletableFuture<Void>> futureResults = IntStream.range(0, 7)
 													.mapToObj( i -> CompletableFuture.runAsync( CurrentThread::sleepAndPrintHello  ))
 													.collect( Collectors.toList() );
@@ -153,7 +151,7 @@ public class CompletableFutureExamples {
 	 * {@link CompletableFuture#thenCombine(java.util.concurrent.CompletionStage, BiFunction)}
 	 * {@link CompletableFuture#thenCombineAsync(java.util.concurrent.CompletionStage, BiFunction)}
 	 */
-	@ExampleFor("CompletableFuture#thenAcceptBoth()")
+	@Example("CompletableFuture#thenAcceptBoth()")
 	public void waitingForBothToComplete() {
 		
 		CompletableFuture<Integer> firstPartCalculation = CompletableFuture.supplyAsync( () -> {
@@ -183,6 +181,7 @@ public class CompletableFutureExamples {
 	 * {@link CompletableFuture#thenCombine(java.util.concurrent.CompletionStage, BiFunction)}
 	 * {@link CompletableFuture#thenCombineAsync(java.util.concurrent.CompletionStage, BiFunction)}
 	 */
+	@Example( "CompletableFuture#thenAccept()" )
 	public void combineValuesOfTwoFutures( BiFunction<Customer,Shop,Route> findRoute ) {
 		CompletableFuture<Customer> customerFuture = CompletableFuture.supplyAsync( () -> new Customer() );
 		CompletableFuture<Shop> closestShopFuture = CompletableFuture.supplyAsync( () -> new Shop() );
@@ -209,6 +208,7 @@ public class CompletableFutureExamples {
 	 * {@link CompletableFuture#runAfterEitherAsync(java.util.concurrent.CompletionStage, Runnable)}
 	 * {@link CompletableFuture#runAfterEitherAsync(java.util.concurrent.CompletionStage, Runnable, java.util.concurrent.Executor)}
 	 */
+	@Example( values={"ComletableFuture#acceptEither()"})
 	public void waitingForFirstToComplete() {
 		CompletableFuture<Integer> harvardCalculation = 
 				CompletableFuture.supplyAsync( () -> { CurrentThread.sleep(); return new Integer(5); } );
@@ -218,13 +218,6 @@ public class CompletableFutureExamples {
 		harvardCalculation.acceptEither( stanfordCalculation, System.out::println );
 	}
 	
-	public static void main(String[] args) throws InterruptedException, ExecutionException {
-		// CompletableFutureExamples examples = new CompletableFutureExamples();
-		// examples.waitForFutureMessage();
-		// examples.waitForAllTasksToComplete();
-		// examples.waitForOneOfTheTasksToComplete();
-		// Thread.sleep(100000);
-		// System.exit(1);
-	}
+	
 
 }

@@ -2,13 +2,13 @@ package com.oriaxx77.java8play.lambda;
 
 import java.util.function.Consumer;
 
-import com.oriaxx77.java8play.ExampleFor;
+import com.oriaxx77.java8play.Example;
 
 /**
  * Example for lamdba expression context capturing.
  * Run this class and watch the output then inspect the code.
  */
-@ExampleFor(values={"Lamda Expression"})	
+@Example("Scopes with lambda")	
 public class LambdaScopeExample {
 	
 	private String string = "LambdaScopeExample level string";

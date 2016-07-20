@@ -6,8 +6,12 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import com.oriaxx77.java8play.Example;
+
+@Example("Parallel processing with streams")
 public class PrimeCountWithParallelStream {
 
+	@Example
 	public Integer getPrimeCount( int treshold ) throws InterruptedException, ExecutionException {
 		final List<Integer> candidates = IntStream.range(2, treshold).boxed().collect(Collectors.toList());
 		final ForkJoinPool forkJoinPool = new ForkJoinPool(5);

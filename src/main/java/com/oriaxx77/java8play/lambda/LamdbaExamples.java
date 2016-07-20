@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.oriaxx77.java8play.ExampleFor;
+import com.oriaxx77.java8play.Example;
 import com.oriaxx77.java8play.util.model.Car;
 
 /**
@@ -13,7 +13,7 @@ import com.oriaxx77.java8play.util.model.Car;
  * Demonstrate:
  * 	- behavioural parameterization which is CONCISE and FLEXIBLE
  */
-@ExampleFor( values={"java.lang.FunctionalInterface","Lambda","Method Reference"})
+@Example( values={"java.lang.FunctionalInterface","Lambda","Method Reference"})
 public class LamdbaExamples {
 
 	
@@ -33,30 +33,30 @@ public class LamdbaExamples {
 		return selectedCars;
 	}
 	
-	@ExampleFor( values={"Lambda"} )
+	@Example( "Lambda" )
 	public Collection<Car> filterBlueCars( Collection<Car> cars ){
 		return filterCars( cars, car -> "blue".equals(car.getColor()));
 	}
 	
-	@ExampleFor( values={"Lambda","Method reference"} )
+	@Example( "Method reference" )
 	public Collection<Car> filterRedCars( Collection<Car> cars ){
 		return filterCars( cars, Car::isRed );
 	}
 	
 	
-	@ExampleFor( values={"Lambda"} )
+	@Example( "Lambda" )
 	public Collection<Car>  filterYellowCars( Collection<Car> cars ){
 		CarFilterPredicate yellowCars = car -> "yellow".equals(car.getColor());
 		return filterCars( cars, yellowCars );		
 	}
 	
-	@ExampleFor( values={"Lambda"} )
+	@Example( "Lambda" )
 	public Collection<Car> filterBlackCars( Collection<Car> cars ){		
 		CarFilterPredicate blackCars = (Car car) -> { return "black".equals(car.getColor()); };
 		return filterCars(cars, blackCars );
 	}
 	
-	@ExampleFor( values={"Lambda", "Stream", "java.util.function.Predicate", "java.util.stream.Collectors" })
+	@Example( "java.util.function.Predicate" )
 	public Collection<Car>  filterWhiteCars( Collection<Car> cars ){
 		return cars.stream().filter( Car::isRed ).collect( Collectors.toList() ) ;
 	}

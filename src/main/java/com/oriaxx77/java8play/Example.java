@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 @Documented
 @Retention(RetentionPolicy.SOURCE)
 @Target(value={ElementType.METHOD,ElementType.TYPE})
-public @interface ExampleFor {
+public @interface Example {
 	
 	String value() default "";
 	

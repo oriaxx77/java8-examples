@@ -1,7 +1,12 @@
 package com.oriaxx77.java8play.stream;
 
+import com.oriaxx77.java8play.Example;
+
 /** Hello world in parallel fashion */
+@Example( "Parallel stream processing")
 public class ParallelHelloWorld {
+	
+	@Example
 	void hello(){
 		"hello".chars()
 			   .parallel()

@@ -2,26 +2,29 @@ package com.oriaxx77.java8play.lambda;
 
 import java.util.function.Consumer;
 
-import com.oriaxx77.java8play.ExampleFor;
+import com.oriaxx77.java8play.Example;
 
 /**
  * Example for lamdba expression context capturing.
  * Run this class and watch the output then inspect the code.
  */
-@ExampleFor(values={"Lamda Expression"})	
+@Example("Lamda Expression")	
 public class LambdaContextCaptureExamples {
 	
 	private String string = " world!";
 	
-	private Consumer<String> returnConsumer() {
+	@Example
+	public Consumer<String> returnConsumer() {
 	    return ((s) -> {System.out.println(s);});
 	}
 
-	private Consumer<String> returnConsumerWithInstanceVariable() {
+	@Example
+	public Consumer<String> returnConsumerWithInstanceVariable() {
 	    return ((s) -> {System.out.println(s + string);});
 	}
 
-	private Consumer<String> returnConsumerWithLocalFinalVariable() {
+	@Example
+	public Consumer<String> returnConsumerWithLocalFinalVariable() {
 	    final String foo = " you there!";
 	    return ((s) -> {System.out.println(s + foo);});
 	}

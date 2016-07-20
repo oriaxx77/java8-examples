@@ -4,15 +4,18 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import com.oriaxx77.java8play.Example;
 import com.oriaxx77.java8play.util.model.Account;
 import com.oriaxx77.java8play.util.model.Car;
 
+@Example( "Stream reduction" )
 public class StreamReduction {
 	
 	/**
 	 * Get the Car with max price.
 	 * (Reduce the stream of cars to the one with max price.
 	 */
+	@Example
 	Optional<Car> getMaxPriceCar(){
 		return getCars()
 				.stream()
@@ -23,6 +26,7 @@ public class StreamReduction {
 	 * Merge the stream of accounts into a new Account object.
 	 * The balance of the new Account object is the sum of the Account objects balance on the stream.
 	 */
+	@Example
 	Account mergeAccounts(){
 		return getAccounts()
 				.stream()
@@ -34,6 +38,7 @@ public class StreamReduction {
 	/**
 	 * Sum the balance of the accounts on the stream
 	 */
+	@Example
 	Long sumBalance(){
 		return getAccounts()
 				.stream()
