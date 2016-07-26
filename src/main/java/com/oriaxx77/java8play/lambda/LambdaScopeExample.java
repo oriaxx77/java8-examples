@@ -15,7 +15,7 @@ public class LambdaScopeExample {
 	
 	private class Inner{
 		
-		private String string = "OuterClass string";
+		private String string = "InnerClass string";
 		
 		void printString( String externalString ){
 			

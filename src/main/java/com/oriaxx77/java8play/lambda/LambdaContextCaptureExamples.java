@@ -14,17 +14,17 @@ public class LambdaContextCaptureExamples {
 	private String string = " world!";
 	
 	@Example
-	public Consumer<String> returnConsumer() {
+	public Consumer<String> consumer() {
 	    return ((s) -> {System.out.println(s);});
 	}
 
 	@Example
-	public Consumer<String> returnConsumerWithInstanceVariable() {
+	public Consumer<String> consumerWithInstanceVariable() {
 	    return ((s) -> {System.out.println(s + string);});
 	}
 
 	@Example
-	public Consumer<String> returnConsumerWithLocalFinalVariable() {
+	public Consumer<String> consumerWithLocalFinalVariable() {
 	    final String foo = " you there!";
 	    return ((s) -> {System.out.println(s + foo);});
 	}
@@ -32,9 +32,9 @@ public class LambdaContextCaptureExamples {
 	
 	public static void main(String[] args) {
 		LambdaContextCaptureExamples examples = new LambdaContextCaptureExamples();
-		examples.returnConsumer().accept("Hello");
-		examples.returnConsumerWithInstanceVariable().accept("Hello");
-		examples.returnConsumerWithLocalFinalVariable().accept("Hello");
+		examples.consumer().accept("Hello");
+		examples.consumerWithInstanceVariable().accept("Hello");
+		examples.consumerWithLocalFinalVariable().accept("Hello");
 	}	
 	
 }
