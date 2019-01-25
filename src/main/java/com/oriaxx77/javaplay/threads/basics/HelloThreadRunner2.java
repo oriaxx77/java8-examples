@@ -1,0 +1,66 @@
+/**
+ * 
+ */
+package com.oriaxx77.javaplay.threads.basics;
+
+import com.oriaxx77.javaplay.utility.Print;
+
+/**
+ * A simple program that runs several thread that says hello.
+ * It uses {@link Runnable}.
+ * @author BagyuraI
+ */
+public class HelloThreadRunner2
+{
+
+	/**
+	 * Thread that says hello.
+	 * @author BagyuraI
+	 */
+	private static class HelloThread implements Runnable
+	{
+		/**
+		 * Name to say hello to.
+		 */
+		private String name;
+
+		/**
+		 * Creates a HelloThread
+		 * @param name Name to say hello to.
+		 */
+		public HelloThread(String name)
+		{
+			super();
+			this.name = name;
+		}
+
+		/* (non-Javadoc)
+		 * @see java.lang.Thread#run()
+		 */
+		@Override
+		public void run()
+		{
+			Print.print( "Hello " + name + "!" );
+		}
+		
+		
+		
+	}
+	
+	/**
+	 * Static entry point of the app.
+	 * @param args Program arguments. It is not used atm.
+	 */
+	public static void main(String[] args)
+	{
+		String[] names = new String[]{ "Istv�n", "P�ter", "Pimpa", "Pic�r" };
+		for ( String name : names )
+		{
+			HelloThread helloThread = new HelloThread( name );
+			Thread thread = new Thread( helloThread );
+			thread.start();
+		}
+
+	}
+
+}

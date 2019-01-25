@@ -1,0 +1,1 @@
+d:\dragon\work\JavaCourse\env\jdk1.7.0_40\bin\javac -g:source -XprintProcessorInfo -XprintRounds -d D:\dragon\tmp -cp  d:\dragon\work\JavaCourse\workspace\JSEPlay\bin -processor com.oriaxx77.javaplay.annotations.processing.ReviewProcessor d:\dragon\work\JavaCourse\workspace\JSEPlay\src\com\p92\javacourse\javaplay\annotations\processing\ClassToReview.java 
